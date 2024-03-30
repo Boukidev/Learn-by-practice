@@ -1,5 +1,5 @@
 <template>
     <div>
-        <h1>Todo List App</h1>
+        <h1>Learn by practice</h1>
     </div>
 </template>
