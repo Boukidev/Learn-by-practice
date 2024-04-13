@@ -1,0 +1,89 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+img {
+    width: 100%;
+}
+
+input,
+textarea {
+    padding: 0.5rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    border: none;
+    outline: none;
+}
+
+.app {
+    width: $breakpoint-large-desktop;
+    margin: 0 auto;
+}
+
+.title-h1 {
+    margin: 1rem 0;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: $primary;
+}
+
+.title-h2 {
+    text-align: center;
+    font-size: 2rem;
+    line-height: 1.3;
+}
+
+.title-h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+
+.title-h4 {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 1200px) {
+    .app {
+        width: $breakpoint-desktop;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .app {
+        width: $breakpoint-tablet;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .app {
+        width: $breakpoint-mobile-landscape;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .app {
+        width: $breakpoint-mobile;
+    }
+}
