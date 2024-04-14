@@ -4,3 +4,8 @@ export interface Task {
     completed: boolean;
     dateCreation: string;
 }
+
+export interface AddTaskInput {
+    title: string;
+    description: string;
+}

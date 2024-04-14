@@ -11,10 +11,10 @@
 </template>
 
 <script lang="ts" setup>
-    import type { Task } from "@/types/data";
+    import type { Task } from "@/types/task";
 
     const props = defineProps<{
-        tasks: Task[];
+        tasks: Task[] | null;
     }>();
 </script>
 
@@ -27,3 +27,4 @@
         justify-content: space-between;
     }
 </style>
+~/types/task
