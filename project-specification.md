@@ -8,13 +8,13 @@
 
 ### Displaying Tasks
 
--   Users can view a list of their existing tasks. _(Partially completed)_
+-   Users can view a list of their existing tasks. _(Completed)_
 -   Tasks are sorted in chronological order (by date added). _(Partially completed)_
 
 ### Adding Tasks
 
--   Users can add a new task by entering a title and a description. _(Partially completed)_
--   The date of addition is automatically recorded.
+-   Users can add a new task by entering a title and a description. _(Completed)_
+-   The date of addition is automatically recorded. _(Completed)_
 
 ### Marking a Task as Completed
 
