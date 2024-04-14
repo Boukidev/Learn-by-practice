@@ -3,15 +3,15 @@
         <h1 class="title-h1">todo list app</h1>
 
         <section class="task-board-section">
-            <task-board :tasks="taskList" />
+            <task-board :tasks="tasks" />
         </section>
 
         <add-button @open-form="showForm = true" />
 
         <form-add-task
             :show-form="showForm"
-            v-model:title="title"
-            v-model:description="description"
+            v-model:title="formData.title"
+            v-model:description="formData.description"
             @submit-form="submitForm"
             @close-form="showForm = false"
         />
@@ -20,29 +20,38 @@
 
 <script lang="ts" setup>
     import { AddButton, FormAddTask } from "@/components/form";
-    import tasksData from "@/data/tasks.json";
-    import type { Task } from "@/types/data";
+    import type { AddTaskInput, Task } from "./types/task";
 
+    const tasks = ref<Task[] | null>(null);
     const showForm = ref<boolean>(false);
-    const title = ref<string>("");
-    const description = ref<string>("");
-
-    const taskList = computed<Task[]>(() => {
-        return sortedByDateCreation(tasksData);
+    const formData = ref<AddTaskInput>({
+        title: "",
+        description: "",
     });
 
-    function sortedByDateCreation(data: Task[]): Task[] {
-        return data.sort((a, b) => new Date(a.dateCreation).getTime() - new Date(b.dateCreation).getTime());
-    }
-
     function resetForm(): void {
-        title.value = "";
-        description.value = "";
+        formData.value.title = "";
+        formData.value.description = "";
     }
 
-    function submitForm() {
-        alert(`title: ${title.value} \n description: ${description.value}`);
+    async function fetchTasks(): Promise<void> {
+        const { data } = await useFetch<Task[]>("/api/tasks");
+        tasks.value = data.value;
+    }
+
+    async function submitForm(): Promise<void> {
+        await useFetch("/api/task", {
+            method: "POST",
+            body: {
+                title: formData.value.title,
+                description: formData.value.description,
+            },
+        });
         resetForm();
         showForm.value = false;
     }
+
+    onMounted(async () => {
+        await fetchTasks();
+    });
 </script>
