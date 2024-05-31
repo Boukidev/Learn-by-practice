@@ -1,3 +1,4 @@
+import type { Task } from "@/types/task";
 import { readFile, writeFile } from "node:fs/promises";
 
 export default defineEventHandler(async (event) => {
@@ -7,8 +8,9 @@ export default defineEventHandler(async (event) => {
         const filePath = "server/data/tasks.json";
         const data = await readFile(filePath, { encoding: "utf8" });
 
-        const tasks = JSON.parse(data);
+        const tasks: Task[] = JSON.parse(data);
         tasks.push({ title, description, completed: false, dateCreation: new Date().toLocaleDateString() });
+
         await writeFile(filePath, JSON.stringify(tasks));
 
         return { message: "Task added successfully" };
