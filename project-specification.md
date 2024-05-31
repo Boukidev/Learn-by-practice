@@ -8,26 +8,26 @@
 
 ### Displaying Tasks
 
--   Users can view a list of their existing tasks. _(Completed)_
--   Tasks are sorted in chronological order (by date added). _(Partially completed)_
+-   Users can view a list of their existing tasks. ✅
+-   Tasks are sorted in chronological order (by date added). ❗
 
 ### Adding Tasks
 
--   Users can add a new task by entering a title and a description. _(Completed)_
--   The date of addition is automatically recorded. _(Completed)_
+-   Users can add a new task by entering a title and a description. ✅
+-   The date of addition is automatically recorded. ✅
 
 ### Marking a Task as Completed
 
--   Users can mark a task as completed. _(Partially completed)_
--   Completed tasks are highlighted in the list. _(Partially completed)_
+-   Users can mark a task as completed. ❗
+-   Completed tasks are highlighted in the list. ❗
 
 ### Deleting Tasks
 
--   Users can delete a task from the list. _(Partially completed)_
+-   Users can delete a task from the list. ❗
 
 ### Data Persistence
 
--   Tasks are stored locally (`@/data/tasks.json`) so they remain available even after the application is closed. _(Partially completed)_
+-   Tasks are stored locally (`@/data/tasks.json`) so they remain available even after the application is closed. ❗
 
 ## Pages and Routes
 
