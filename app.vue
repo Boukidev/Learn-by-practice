@@ -1,9 +1,5 @@
 <template>
-    <h1>Auth UI</h1>
+    <h1 class="text-3xl font-bold text-center mt-4 mb-10 text-slate-700">Auth UI</h1>
 
-    <LoginForm></LoginForm>
+    <NuxtPage />
 </template>
-
-<script lang="ts" setup>
-    import LoginForm from "./components/form/login.vue";
-</script>
